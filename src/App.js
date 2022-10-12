@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Start from './components/Start';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
+// import Timer from "./components/timer";
+
 
 function App() {
   // All Quizs, Current Question, Index of Current Question, Answer, Selected Answer, Total Marks
@@ -11,11 +13,15 @@ function App() {
   const [correctAnswer, setCorrectAnswer] = useState('');
   const [selectedAnswer, setSelectedAnswer] = useState('');
   const [marks, setMarks] = useState(0);
+ 
+
 
   // Display Controlling States
   const [showStart, setShowStart] = useState(true);
   const [showQuiz, setShowQuiz] = useState(false);
   const [showResult, setShowResult] = useState(false);
+  const [score, setScore] = useState(0);
+
 
   // Load JSON Data
   useEffect(() => {
@@ -112,6 +118,12 @@ function App() {
         quizs={quizs}
         marks={marks}
         startOver={startOver} />
+
+                 {/* <Timer 
+          showResult={showResult}
+          setShowResult={setShowResult} /> */}
+
+
     </>
   );
 }
